@@ -635,76 +635,231 @@ class MultiDimensionalHealthEngine:
 # ==============================================================================
 # 5. EMPATHETIC POLICY ENGINE WITH MORAL HAZARD SAFEGUARDS
 # ==============================================================================
+# Full production code available in: veto_decision_layer.py
+
+@dataclass
+class GraceTokenWallet:
+    """
+    Tier 2 Moral Hazard Containment: Finite Empathy Budget.
+    Limits habitual gaming of emergency grace windows and interest holidays.
+    """
+    max_tokens: int = 2
+    available_tokens: int = 2
+    on_time_streak: int = 0
+    replenishment_target_streak: int = 4
+    total_tokens_consumed_12m: int = 0
+
+    def record_repayment(self, is_on_time: bool) -> bool:
+        if is_on_time:
+            self.on_time_streak += 1
+            if self.on_time_streak >= self.replenishment_target_streak and self.available_tokens < self.max_tokens:
+                self.available_tokens += 1
+                self.on_time_streak = 0
+                return True
+        else:
+            self.on_time_streak = 0
+        return False
+
+    def consume_token(self) -> bool:
+        if self.available_tokens > 0:
+            self.available_tokens -= 1
+            self.total_tokens_consumed_12m += 1
+            self.on_time_streak = 0
+            return True
+        return False
+
+
 class EmpatheticPolicyEngine:
-    @staticmethod
+    HARD_DTI_CEILING: float = 0.50
+    FRAUD_POLARITY_CEILING: float = 0.60
+    PRE_BOUNCE_LOOKAHEAD_DAYS: int = 4
+    DEFAULT_SKIN_IN_THE_GAME_RATIO: float = 0.25
+
+    BLOCKED_CREDIT_PRODUCTS = [
+        "PERSONAL_LOAN", "CREDIT_CARD", "TOP_UP_LOAN",
+        "INSTANT_CASH_CREDIT", "SALARY_ADVANCE_LOAN"
+    ]
+
+    @classmethod
     def evaluate(
+        cls,
+        customer_id: str,
         phi_f: float,
         phi_s: float,
         health_data: Dict[str, Any],
         customer_profile: Dict[str, Any],
         next_emi_due_days: int,
         emi_amount: float,
-        projected_balance: float
+        projected_balance: float,
+        token_wallet: Optional[GraceTokenWallet] = None
     ) -> Dict[str, Any]:
-        
-        # GATE 1: FRAUD SECURITY SHIELD
-        # If fraud polarity is high or untrusted device is active, lock all empathy options
-        if phi_f >= 0.60 or customer_profile.get('device_is_untrusted', False):
+        if token_wallet is None:
+            token_wallet = GraceTokenWallet(
+                available_tokens=customer_profile.get("grace_tokens_available", 2),
+                on_time_streak=customer_profile.get("on_time_repayment_streak", 0)
+            )
+
+        vector = health_data.get("vector", {"buffer": 50.0, "debt": 50.0, "stability": 50.0, "spend": 50.0})
+        composite_score = float(health_data.get("composite_score", 50.0))
+        dti_ratio = float(customer_profile.get("dti_ratio", 0.35))
+        language = customer_profile.get("preferred_language", "hi")
+
+        # GATE 1: TIER 1 FRAUD SECURITY SHIELD (Context-Aware Step-Up Gate)
+        if phi_f >= cls.FRAUD_POLARITY_CEILING or customer_profile.get("device_is_untrusted", False):
             return {
-                "decision": "SECURITY_CHALLENGE",
-                "action": "STEP_UP_BIOMETRIC_KYC",
-                "reason": "Anomalous device or high-drain signature detected.",
-                "empathy_unlocked": False
+                "customer_id": customer_id,
+                "financial_health_score": round(composite_score, 1),
+                "health_category": "Security Review Required",
+                "veto_triggered": True,
+                "veto_reason": "SECURITY_SHIELD_ACTIVE: High fraud polarity or unrecognized device signature.",
+                "empathy_unlocked": False,
+                "blocked_products": cls.BLOCKED_CREDIT_PRODUCTS,
+                "final_action": {
+                    "action_type": "SECURITY_CHALLENGE",
+                    "product_push_allowed": False,
+                    "display_title": "Identity Verification Required",
+                    "message_en": "To protect your account, financial restructuring is temporarily paused. Please complete step-up biometric KYC.",
+                    "vernacular_message_hi": "Aapke khate ki suraksha ke liye, naye badlav abhi roke gaye hain. Kripya biometric ya OTP dwara pehchaan satyapit karein.",
+                    "cta_action": "STEP_UP_BIOMETRIC_KYC"
+                }
             }
-            
-        # GATE 2: EMPATHY TOKEN WALLET & MORAL HAZARD CHECK
-        available_tokens = customer_profile.get('grace_tokens_available', 0)
-        vector = health_data['vector']
-        
-        # SCENARIO A: PRE-BOUNCE SHORTFALL DETECTED
-        if next_emi_due_days <= 4 and projected_balance < emi_amount:
+
+        # GATE 2: PRE-BOUNCE SHORTFALL & MORAL HAZARD TOKEN CHECK
+        if next_emi_due_days <= cls.PRE_BOUNCE_LOOKAHEAD_DAYS and projected_balance < emi_amount:
             shortfall = emi_amount - projected_balance
-            
-            if available_tokens > 0:
+            copay = round(emi_amount * cls.DEFAULT_SKIN_IN_THE_GAME_RATIO, 2)
+            deferred = round(emi_amount - copay, 2)
+
+            if token_wallet.available_tokens > 0:
                 return {
-                    "decision": "EMPATHETIC_INTERVENTION",
-                    "intervention_type": "PRE_BOUNCE_GRACE_OFFER",
-                    "channel": "VERNACULAR_IVR_OR_WHATSAPP",
-                    "language": customer_profile.get('preferred_language', 'hi-IN'),
-                    "options": [
-                        {
-                            "option_id": "SPLIT_EMI",
-                            "label": f"Pay 25% (₹{emi_amount*0.25:.0f}) now, balance in 15 days (Zero penalty)",
-                            "requires_token": True
-                        },
-                        {
-                            "option_id": "7_DAY_GRACE",
-                            "label": "Activate 7-day grace window (Preserves CIBIL standing)",
-                            "requires_token": True
-                        }
-                    ],
-                    "suppress_predatory_loans": True
+                    "customer_id": customer_id,
+                    "financial_health_score": round(composite_score, 1),
+                    "health_category": "Early Stress",
+                    "veto_triggered": True,
+                    "veto_reason": f"Impending auto-debit shortfall of ₹{shortfall:,.0f} within {cls.PRE_BOUNCE_LOOKAHEAD_DAYS} days.",
+                    "empathy_unlocked": True,
+                    "grace_tokens_remaining": token_wallet.available_tokens,
+                    "blocked_products": cls.BLOCKED_CREDIT_PRODUCTS,
+                    "final_action": {
+                        "action_type": "EMPATHETIC_INTERVENTION",
+                        "product_push_allowed": False,
+                        "display_title": "Proactive EMI Relief (Grace Token Available)",
+                        "message_en": f"We noticed your balance is short by ₹{shortfall:,.0f} for your upcoming EMI of ₹{emi_amount:,.0f}. Activate your Grace Token for zero-penalty deferral.",
+                        "vernacular_message_hi": f"Humne dekha ki agli EMI ke liye ₹{shortfall:,.0f} ki kami ho sakti hai. Aap apna Grace Token istemal karke bina jurmane ke 25% abhi aur baki 14 din baad chuka sakte hain.",
+                        "cta_action": "ACTIVATE_GRACE_TOKEN",
+                        "intervention_options": [
+                            {
+                                "option_id": "SPLIT_EMI_WITH_COPAY",
+                                "label": f"Pay ₹{copay:,.0f} today (25% co-pay); balance ₹{deferred:,.0f} in 14 days.",
+                                "requires_token": True
+                            },
+                            {
+                                "option_id": "7_DAY_GRACE_WINDOW",
+                                "label": f"Activate 7-day grace window (₹{emi_amount:,.0f} due on day 7, CIBIL intact).",
+                                "requires_token": True
+                            }
+                        ]
+                    }
                 }
             else:
                 # Token exhausted - offer structural tenure restructuring instead of free grace
                 return {
-                    "decision": "EMPATHETIC_RESTRUCTURING",
-                    "action": "OFFER_TENURE_EXTENSION",
-                    "detail": "Customer has exhausted Grace Tokens. Propose extending tenure by 3 months to lower EMI.",
-                    "suppress_predatory_loans": True
+                    "customer_id": customer_id,
+                    "financial_health_score": round(composite_score, 1),
+                    "health_category": "Early Stress (Tokens Exhausted)",
+                    "veto_triggered": True,
+                    "veto_reason": "Pre-bounce shortfall detected, but annual Grace Token budget is exhausted.",
+                    "empathy_unlocked": True,
+                    "grace_tokens_remaining": 0,
+                    "blocked_products": cls.BLOCKED_CREDIT_PRODUCTS,
+                    "final_action": {
+                        "action_type": "EMPATHETIC_RESTRUCTURING",
+                        "product_push_allowed": False,
+                        "display_title": "Sustainable Loan Tenure Extension",
+                        "message_en": "You have utilized your annual Grace Tokens. We can extend your loan tenure by 3 to 6 months to lower your monthly EMI.",
+                        "vernacular_message_hi": "Aapke is varsh ke Grace Tokens samapt ho chuke hain. EMI ka bojh kam karne ke liye hum muddat 3 se 6 mahine badha sakte hain.",
+                        "cta_action": "APPLY_TENURE_RESTRUCTURING"
+                    }
                 }
 
-        # SCENARIO B: STRUCTURAL DEBT STRESS (Low Debt & Buffer Pillar)
-        if vector['debt'] < 40.0 and vector['buffer'] < 30.0:
+        # GATE 3: 4D HEALTH VECTOR GRANULAR BRANCHING
+        # Branch 3A: Structural Overleverage
+        if vector["debt"] < 40.0 and vector["buffer"] < 30.0:
             return {
-                "decision": "DEBT_STRESS_ADVISORY",
-                "action": "OFFER_CONSOLIDATION_OR_RESTRUCTURING",
-                "suppress_predatory_loans": True
+                "customer_id": customer_id,
+                "financial_health_score": round(composite_score, 1),
+                "health_category": "Distressed",
+                "veto_triggered": True,
+                "veto_reason": "Structural overleverage: Buffer Pillar < 30 and Debt Pillar < 40.",
+                "empathy_unlocked": True,
+                "blocked_products": cls.BLOCKED_CREDIT_PRODUCTS,
+                "final_action": {
+                    "action_type": "EMPATHETIC_INTERVENTION",
+                    "product_push_allowed": False,
+                    "display_title": "Comprehensive Debt Restructuring",
+                    "message_en": "Your debt obligations exceed safe thresholds. We have paused credit offers and can connect you with an advisor for loan restructuring.",
+                    "vernacular_message_hi": "Aapke kharche aamdani se adhik hain. Naye loan band kar diye gaye hain. Salahkaar se baat karein.",
+                    "cta_action": "REQUEST_DEBT_COUNSELLING"
+                }
+            }
+
+        # Branch 3B: Temporary Cashflow Gap (Salary/Harvest Delay)
+        if vector["buffer"] < 30.0 and vector["debt"] >= 60.0 and vector["stability"] < 40.0:
+            bridge_amt = round(emi_amount * 0.50, 2)
+            return {
+                "customer_id": customer_id,
+                "financial_health_score": round(composite_score, 1),
+                "health_category": "Temporary Cashflow Gap",
+                "veto_triggered": True,
+                "veto_reason": "Temporary liquidity pinch (Buffer < 30) despite pristine repayment track record.",
+                "empathy_unlocked": True,
+                "blocked_products": cls.BLOCKED_CREDIT_PRODUCTS,
+                "final_action": {
+                    "action_type": "EMPATHETIC_INTERVENTION",
+                    "product_push_allowed": False,
+                    "display_title": "0% Interest Emergency Bridge Facility",
+                    "message_en": f"Activate a 0% interest mini-bridge overdraft of ₹{bridge_amt:,.0f} to cover scheduled payments during income delay.",
+                    "vernacular_message_hi": f"Aapki aamdani aane mein der hui hai. Agli EMI ke liye ₹{bridge_amt:,.0f} ka 0% byaj bridge sahayata uplabdh hai.",
+                    "cta_action": "ACTIVATE_MINI_BRIDGE"
+                }
+            }
+
+        # GATE 4: HARD VETO FLOOR (DTI > 50% or Delinquency)
+        if dti_ratio > cls.HARD_DTI_CEILING or composite_score < 40.0:
+            return {
+                "customer_id": customer_id,
+                "financial_health_score": round(composite_score, 1),
+                "health_category": "Early Stress" if composite_score >= 40.0 else "Critical",
+                "veto_triggered": True,
+                "veto_reason": f"Debt-to-income exceeds safety threshold (DTI={dti_ratio*100:.1f}% > 50.0% cap).",
+                "empathy_unlocked": True,
+                "blocked_products": cls.BLOCKED_CREDIT_PRODUCTS,
+                "final_action": {
+                    "action_type": "EMPATHETIC_INTERVENTION",
+                    "product_push_allowed": False,
+                    "display_title": "Proactive EMI Support",
+                    "message_en": "We noticed your monthly expenses have risen. Would you like to reschedule your upcoming EMI at zero penalty?",
+                    "vernacular_message_hi": "Humne dekha ki is mahine aapke kharche badh gaye hain. Kya aap apni agli EMI aage badhana chahte hain?",
+                    "cta_action": "REQUEST_EMI_RELIEF"
+                }
             }
 
         return {
-            "decision": "STANDARD_MONITORING",
-            "suppress_predatory_loans": health_data['composite_score'] < 60.0
+            "customer_id": customer_id,
+            "financial_health_score": round(composite_score, 1),
+            "health_category": "Healthy" if composite_score >= 80.0 else "Mild Concern",
+            "veto_triggered": False,
+            "veto_reason": None,
+            "empathy_unlocked": True,
+            "blocked_products": [],
+            "final_action": {
+                "action_type": "PROACTIVE_RECOMMENDATION_PERMITTED",
+                "product_push_allowed": True,
+                "display_title": "Standard Financial Journey",
+                "message_en": "Your account health is stable. Tailored financial products may be surfaced.",
+                "vernacular_message_hi": "Aapka khata santulit hai. Zaroorat anusar upyogi yojanaayein uplabdh hain.",
+                "cta_action": "VIEW_RECOMMENDATIONS"
+            }
         }
 ```
 
