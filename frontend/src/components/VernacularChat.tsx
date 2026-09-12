@@ -25,7 +25,7 @@ interface ChatMessage {
   time: string;
 }
 
-const INITIAL_MESSAGES: ChatMessage[] = [
+const INITIAL_MESSAGES_HI: ChatMessage[] = [
   {
     id: "m-0",
     sender: "bot",
@@ -34,8 +34,24 @@ const INITIAL_MESSAGES: ChatMessage[] = [
   },
 ];
 
-const SUGGESTIONS = [
+const INITIAL_MESSAGES_EN: ChatMessage[] = [
+  {
+    id: "m-0",
+    sender: "bot",
+    text: "Hello! I am BharatBanker's digital banking assistant. I can guide you through a safe loan application and answer regulatory questions in plain language.\n\nYou can enter your full name to begin the loan application, or ask any policy question.",
+    time: "Just now",
+  },
+];
+
+const SUGGESTIONS_HI = [
   "Yeh cooling-off period kya hota hai?",
+  "PAN card kyu chahiye hota hai?",
+  "50% DTI niyam kya hai?",
+  "Bina penalty loan prepay kar sakte hain?",
+];
+
+const SUGGESTIONS_EN = [
+  "What is the 3-day cooling-off period?",
   "Why do you need my PAN card?",
   "What is the 50% DTI rule?",
   "Can I prepay my loan without penalty?",
@@ -51,10 +67,10 @@ const KYC_SLOTS = [
 ];
 
 export const VernacularChat: React.FC = () => {
-  const [messages, setMessages] = useState<ChatMessage[]>(INITIAL_MESSAGES);
+  const [selectedLanguage, setSelectedLanguage] = useState<"hi" | "en">("hi");
+  const [messages, setMessages] = useState<ChatMessage[]>(INITIAL_MESSAGES_HI);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
-  const [selectedLanguage, setSelectedLanguage] = useState("hi");
   const [completedSlots, setCompletedSlots] = useState<string[]>([]);
   const [currentSlot, setCurrentSlot] = useState<string>("name");
   const [sessionId] = useState(() => "session_" + Math.random().toString(36).substring(2, 9));
@@ -67,6 +83,14 @@ export const VernacularChat: React.FC = () => {
   useEffect(() => {
     scrollToBottom();
   }, [messages]);
+
+  const handleLanguageToggle = (lang: "hi" | "en") => {
+    setSelectedLanguage(lang);
+    // If user hasn't started a complex chat yet, update greeting
+    if (messages.length <= 1) {
+      setMessages(lang === "hi" ? INITIAL_MESSAGES_HI : INITIAL_MESSAGES_EN);
+    }
+  };
 
   const handleSend = async (textToSend?: string) => {
     const query = textToSend || input;
@@ -113,10 +137,12 @@ export const VernacularChat: React.FC = () => {
   };
 
   const handleReset = () => {
-    setMessages(INITIAL_MESSAGES);
+    setMessages(selectedLanguage === "hi" ? INITIAL_MESSAGES_HI : INITIAL_MESSAGES_EN);
     setCompletedSlots([]);
     setCurrentSlot("name");
   };
+
+  const activeSuggestions = selectedLanguage === "hi" ? SUGGESTIONS_HI : SUGGESTIONS_EN;
 
   return (
     <div className="space-y-6">
@@ -138,21 +164,36 @@ export const VernacularChat: React.FC = () => {
             </p>
           </div>
 
-          <div className="flex items-center gap-2">
-            <select
-              value={selectedLanguage}
-              onChange={(e) => setSelectedLanguage(e.target.value)}
-              className="bg-slate-900 border border-slate-700 text-xs text-slate-200 rounded-lg px-2.5 py-1.5 focus:outline-none focus:border-cyan-500"
-            >
-              <option value="hi">हिंदी (Hindi / Hinglish)</option>
-              <option value="en">English (Official)</option>
-              <option value="ta">தமிழ் (Tamil)</option>
-              <option value="te">తెలుగు (Telugu)</option>
-            </select>
+          <div className="flex items-center gap-3">
+            {/* SCRIPT TOGGLE BUTTON */}
+            <div className="flex items-center p-1 rounded-xl bg-slate-900 border border-slate-700/80 shadow-inner">
+              <button
+                type="button"
+                onClick={() => handleLanguageToggle("hi")}
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
+                  selectedLanguage === "hi"
+                    ? "bg-gradient-to-r from-orange-500 to-amber-600 text-white shadow-md shadow-orange-500/25"
+                    : "text-slate-400 hover:text-slate-200"
+                }`}
+              >
+                <span>🇮🇳 हिंदी (Hindi)</span>
+              </button>
+              <button
+                type="button"
+                onClick={() => handleLanguageToggle("en")}
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
+                  selectedLanguage === "en"
+                    ? "bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-md shadow-cyan-500/25"
+                    : "text-slate-400 hover:text-slate-200"
+                }`}
+              >
+                <span>🇬🇧 English</span>
+              </button>
+            </div>
 
             <button
               onClick={handleReset}
-              className="p-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-white transition-colors"
+              className="p-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-400 hover:text-white border border-slate-700 transition-colors"
               title="Reset Conversation"
             >
               <RotateCcw className="w-4 h-4" />
@@ -283,11 +324,12 @@ export const VernacularChat: React.FC = () => {
         <div className="p-3 bg-slate-900/60 border-t border-slate-800/80 flex items-center gap-2 overflow-x-auto">
           <span className="text-[10px] font-bold uppercase tracking-wider text-slate-500 shrink-0 flex items-center gap-1">
             <BookOpen className="w-3 h-3" />
-            <span>Detour Qs:</span>
+            <span>{selectedLanguage === "hi" ? "त्वरित प्रश्न (Detour):" : "Quick Policy Detours:"}</span>
           </span>
-          {SUGGESTIONS.map((sug, idx) => (
+          {activeSuggestions.map((sug, idx) => (
             <button
               key={idx}
+              type="button"
               onClick={() => handleSend(sug)}
               className="text-xs shrink-0 px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-750 text-slate-300 hover:text-cyan-300 border border-slate-700 transition-colors"
             >
@@ -309,7 +351,11 @@ export const VernacularChat: React.FC = () => {
               type="text"
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              placeholder="Type your message in Hindi, Hinglish, or English (e.g. 'Sunita Devi', 'ABCDE1234F', or ask a question)..."
+              placeholder={
+                selectedLanguage === "hi"
+                  ? "हिंदी या Hinglish में संदेश लिखें (उदा: 'सुनीता देवी', 'ABCDE1234F', या 'कॉलिंग ऑफ पीरियड क्या है')..."
+                  : "Type in English (e.g. 'Sunita Devi', 'ABCDE1234F', or 'What is cooling off period?')..."
+              }
               className="flex-1 bg-slate-900 border border-slate-800 rounded-xl px-4 py-2.5 text-xs sm:text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:border-cyan-500 transition-colors"
             />
             <button
