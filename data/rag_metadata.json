@@ -1,0 +1,368 @@
+[
+  {
+    "chunk_id": "curated_cooling_off_period",
+    "doc_name": "Cooling-Off / Look-Up Period",
+    "section_title": "Cooling-Off / Look-Up Period",
+    "citation": "[Source: RBI Digital Lending Guidelines 2022, Sec 3.1]",
+    "content_en": "Under RBI Digital Lending Guidelines, borrowers have a mandatory 3-calendar-day cooling-off (look-up) period. During this window, you can exit the loan without paying any foreclosure penalty or penal charges; you only repay the disbursed principal plus proportionate accrued interest.",
+    "content_hi": "भारतीय रिजर्व बैंक (RBI) डिजिटल लेंडिंग दिशा-निर्देशों के तहत उधारकर्ताओं को 3 दिन का अनिवार्य 'कूलिंग-ऑफ (लुक-अप) पीरियड' मिलता है। इस अवधि में आप बिना किसी फोरक्लोजर पेनल्टी के लोन से बाहर निकल सकते हैं; केवल वितरित मूलधन और आनुपातिक ब्याज ही देय होता है।",
+    "content_hi_en": "RBI Digital Lending Guidelines ke tehat aapko 3 din ka 'cooling-off period' milta hai. Is dauraan agar aap loan cancel karna chahein, toh bina kisi penalty ya foreclosure charges ke cancel kar sakte hain; aapko sirf li gayi rashi aur utne dino ka aam byaj lautana hota hai.",
+    "keywords": [
+      "cooling off",
+      "cooling-off",
+      "look up",
+      "lookup",
+      "cancel loan",
+      "loan cancellation",
+      "cooling-off period kya hota hai",
+      "cooling off kya hai",
+      "loan wapas karna",
+      "exit loan"
+    ]
+  },
+  {
+    "chunk_id": "curated_why_pan_and_aadhaar",
+    "doc_name": "KYC Verification & Data Privacy (PAN & Aadhaar Last 4)",
+    "section_title": "KYC Verification & Data Privacy (PAN & Aadhaar Last 4)",
+    "citation": "[Source: RBI KYC Master Direction & DPDP Act 2023, Sec 2.2]",
+    "content_en": "PAN verification is legally required under Income Tax Act Section 139A and RBI KYC norms to evaluate credit bureau history. In compliance with DPDP Act 2023 and UIDAI rules, we NEVER store your full 12-digit Aadhaar. We only collect the last 4 digits, validated with the Verhoeff checksum algorithm to verify your existing KYC safely.",
+    "content_hi": "आयकर अधिनियम धारा 139A और RBI KYC नियमों के तहत क्रेडिट ब्यूरो जांच के लिए पैन अनिवार्य है। DPDP अधिनियम 2023 के तहत हम कभी भी आपका पूरा 12-अंकों का आधार नहीं मांगते। आपकी निजता की सुरक्षा के लिए केवल अंतिम 4 अंक वेरहोफ चेकसम द्वारा सत्यापित किए जाते हैं।",
+    "content_hi_en": "Income Tax Act aur RBI KYC niyamon ke tehat credit bureau score check karne ke liye PAN anivarya hai. DPDP Act 2023 ke anusaar hum aapka poora 12-digit Aadhaar number kabhi save ya request nahi karte. Keval antim 4 ank Verhoeff checksum se jaanche jaate hain taaki aapka data poori tarah surakshit rahe.",
+    "keywords": [
+      "why pan",
+      "pan kyun chahiye",
+      "pan kyu",
+      "aadhaar kyu",
+      "why aadhaar",
+      "aadhaar 4 digit",
+      "pan number kyu mangte ho",
+      "data safety",
+      "aadhaar privacy",
+      "dpdp"
+    ]
+  },
+  {
+    "chunk_id": "curated_inability_to_repay",
+    "doc_name": "Loan Repayment Distress & Empathetic Restructuring",
+    "section_title": "Loan Repayment Distress & Empathetic Restructuring",
+    "citation": "[Source: RBI Framework for Stressed Assets & Fair Recovery Code, Sec 4.4]",
+    "content_en": "If you face financial hardship or cannot repay an EMI on time, RBI guidelines mandate that lenders provide proactive assistance, such as EMI rescheduling, tenure extension, or a temporary grace period. Lenders and recovery agents are strictly prohibited from harassment, contacting after 7:00 PM, or accessing your personal phone contacts.",
+    "content_hi": "यदि आप किसी वित्तीय कठिनाई के कारण समय पर ईएमआई नहीं चुका पाते हैं, तो RBI नियमों के तहत बैंक आपको ईएमआई रीशेड्यूल करने या रियायती अवधि (Grace Period) का विकल्प प्रदान करता है। किसी भी रिकवरी एजेंट द्वारा सुबह 8 बजे से पहले या शाम 7 बजे के बाद संपर्क करना या अनुचित दबाव बनाना पूर्णतः प्रतिबंधित है।",
+    "content_hi_en": "Agar aap kisi mahine EMI nahi chuka pate hain, toh ghabraiye mat. RBI ke niyamon ke anusaar bank aapko EMI aage badhane (reschedule) ya tenure badhane ka vikalp dete hain. Kisi bhi recovery agent ko subah 8 baje se pehle ya shaam 7 baje ke baad call karna, ya kisi bhi tarah pareshan karna sakht mana hai.",
+    "keywords": [
+      "loan nahi chuka payi",
+      "loan nahi chukaya",
+      "cannot repay",
+      "unable to pay",
+      "missed emi",
+      "default",
+      "harassment",
+      "recovery agent",
+      "kya hoga agar loan na du",
+      "agar emi na bhare"
+    ]
+  },
+  {
+    "chunk_id": "curated_upi_pin_golden_rule",
+    "doc_name": "UPI PIN Security & Safety Rules",
+    "section_title": "UPI PIN Security & Safety Rules",
+    "citation": "[Source: NPCI UPI Safety Advisory, Sec 1.1]",
+    "content_en": "The Golden Rule of UPI: You only enter your UPI PIN when SENDING money or checking account balance. You NEVER need to enter a UPI PIN or scan a QR code to RECEIVE money or get a refund. Entering your PIN always debits money from your account.",
+    "content_hi": "UPI का स्वर्णिम नियम: UPI PIN केवल पैसे भेजने (भुगतान करने) के लिए दर्ज किया जाता है। पैसे प्राप्त करने या रिफंड पाने के लिए कभी भी UPI PIN दर्ज करने की आवश्यकता नहीं होती। पिन दर्ज करने पर सदैव आपके खाते से राशि कटती है।",
+    "content_hi_en": "UPI ka sabse zaroori niyam: UPI PIN sirf paise BHEJNE (send karne) ke liye darj kiya jata hai. Paise prapt karne (receive karne) ya refund ke liye kabhi bhi UPI PIN darj karne ya QR scan karne ki zaroorat nahi hoti. PIN dalne par hamesha aapke khate se paise kat-te hain.",
+    "keywords": [
+      "upi pin",
+      "pin rule",
+      "receive money pin",
+      "upi safety",
+      "qr code receive",
+      "upi pin kab dalna chahiye",
+      "paisa aane par pin",
+      "upi fraud"
+    ]
+  },
+  {
+    "chunk_id": "curated_prepayment_penalty",
+    "doc_name": "Prepayment & Foreclosure Charges Restriction",
+    "section_title": "Prepayment & Foreclosure Charges Restriction",
+    "citation": "[Source: RBI Master Direction on Fair Practices, Sec 2.5]",
+    "content_en": "As per RBI Master Direction on Fair Lending Practices, banks and NBFCs cannot charge any foreclosure fees or pre-payment penalties on individual floating-rate retail loans (including personal and home loans). You can prepay your balance at zero penalty.",
+    "content_hi": "RBI के निष्पक्ष व्यवहार संहिता (Fair Practices Code) के अनुसार, व्यक्तिगत फ्लोटिंग रेट ऋणों पर किसी भी प्रकार का फोरक्लोजर शुल्क या प्री-पेमेंट पेनल्टी लगाना पूर्णतः प्रतिबंधित है। आप बिना किसी अतिरिक्त शुल्क के समय पूर्व ऋण चुका सकते हैं।",
+    "content_hi_en": "RBI ke Fair Practices Code ke anusaar individual floating-rate personal loan ya home loan par kisi bhi tarah ka foreclosure charge ya prepayment penalty lagana nishedh hai. Aap jab chahein apna loan bina penalty ke band kar sakte hain.",
+    "keywords": [
+      "prepayment penalty",
+      "foreclosure charges",
+      "pehle loan chukana",
+      "loan band karne par charges",
+      "pre-payment",
+      "foreclosure fee"
+    ]
+  },
+  {
+    "chunk_id": "curated_pmjdy_overdraft_insurance",
+    "doc_name": "PMJDY Overdraft Facility and RuPay Insurance",
+    "section_title": "PMJDY Overdraft Facility and RuPay Insurance",
+    "citation": "[Source: PMJDY Scheme Rules & Insurance Terms, Sec 2.4 & 3.2]",
+    "content_en": "Under Pradhan Mantri Jan Dhan Yojana (PMJDY), eligible account holders who maintain satisfactory transactions for 6 months can get an overdraft (OD) of up to ₹10,000 (up to ₹2,000 without collateral conditions). RuPay Debit Cards also carry ₹2,00,000 accidental insurance cover provided the card is used once in 90 days.",
+    "content_hi": "प्रधानमंत्री जन धन योजना (PMJDY) के तहत 6 महीने के संतोषजनक संचालन के बाद ₹10,000 तक की ओवरड्राफ्ट सुविधा मिलती है (₹2,000 तक बिना शर्त)। साथ ही RuPay कार्ड पर ₹2,00,000 का दुर्घटना बीमा कवर मिलता है (90 दिनों में 1 लेन-देन आवश्यक)।",
+    "content_hi_en": "Pradhan Mantri Jan Dhan Yojana (PMJDY) ke tehat 6 mahine achhe len-den par ₹10,000 tak ki Overdraft (OD) suvidha milti hai (₹2,000 tak bina kisi shart). Saath hi RuPay card par ₹2,00,000 ka durghatna beema milta hai, basharte card 90 dino mein kam se kam ek baar use hua ho.",
+    "keywords": [
+      "pmjdy overdraft",
+      "jan dhan od",
+      "jan dhan loan",
+      "rupay insurance",
+      "rupay 2 lakh",
+      "jan dhan khata benefits",
+      "jan dhan me 10000"
+    ]
+  },
+  {
+    "chunk_id": "curated_dti_safety_cap",
+    "doc_name": "Debt-to-Income (DTI) 50% Responsible Lending Ceiling",
+    "section_title": "Debt-to-Income (DTI) 50% Responsible Lending Ceiling",
+    "citation": "[Source: RBI Credit Assessment & Affordability Framework, Sec 1.3]",
+    "content_en": "BharatBanker AI adheres to RBI responsible lending directives: total monthly loan EMIs must never exceed 50% of verified net monthly income. If your requested loan would push your DTI above 50%, an ethical hard veto activates to prevent debt entrapment, and an affordable, moderated limit is offered instead.",
+    "content_hi": "भारतबैंकर जिम्मेदार बैंकिंग सिद्धांतों का पालन करता है: कुल मासिक ऋण ईएमआई आपकी आय के 50% से अधिक नहीं होनी चाहिए। यदि डीटीआई 50% से अधिक होता है, तो अतिरिक्त कर्ज से बचाने के लिए हार्ड वीटो लागू होता है और सुरक्षित ऋण राशि का सुझाव दिया जाता है।",
+    "content_hi_en": "BharatBanker AI zimmedar lending ke tehat kaam karta hai: aapki kul monthly EMI aapki aamdani ke 50% se zyada nahi honi chahiye. Agar DTI 50% se upar jata hai, toh Hard Veto lagta hai taaki aap par karz ka bojh na badhe, aur aapko safe amount offer kiya jata hai.",
+    "keywords": [
+      "dti",
+      "debt to income",
+      "50% rule",
+      "affordability",
+      "veto",
+      "karz ki seema",
+      "loan eligibility",
+      "kitna loan mil sakta hai"
+    ]
+  },
+  {
+    "chunk_id": "dpdp_aadhaar_privacy.md_1",
+    "doc_name": "Digital Personal Data Protection (DPDP) Act & Customer KYC Privacy Norms",
+    "section_title": "Section 1: Data Minimization and Consent Principles",
+    "citation": "[Source: DPDP Act 2023 & UIDAI Circular, Sec 1.1]",
+    "content_en": "1. **Purpose Limitation:** Customer data collected by the bank must be strictly confined to the explicit purpose specified at collection (credit evaluation and loan disbursal).\n2. **Data Minimization:** Banks shall not collect more personal information than necessary to complete the regulatory transaction.",
+    "content_hi": "1. **Purpose Limitation:** Customer data collected by the bank must be strictly confined to the explicit purpose specified at collection (credit evaluation and loan disbursal).\n2. **Data Minimization:** Banks shall not collect more personal information than necessary to complete the regulatory transaction.",
+    "content_hi_en": "1. **Purpose Limitation:** Customer data collected by the bank must be strictly confined to the explicit purpose specified at collection (credit evaluation and loan disbursal).\n2. **Data Minimization:** Banks shall not collect more personal information than necessary to complete the regulatory transaction.",
+    "keywords": []
+  },
+  {
+    "chunk_id": "dpdp_aadhaar_privacy.md_2",
+    "doc_name": "Digital Personal Data Protection (DPDP) Act & Customer KYC Privacy Norms",
+    "section_title": "Section 2: Why We Collect PAN and Aadhaar Last 4 Digits",
+    "citation": "[Source: RBI Master Direction - KYC & UIDAI Compliance, Sec 2.2]",
+    "content_en": "1. **Permanent Account Number (PAN):** Under Section 139A of the Income Tax Act and RBI KYC directions, PAN verification is mandatory for credit evaluation and credit bureau inquiries (CIBIL/Experian/Equifax/CRIF).\n2. **Aadhaar Masking and Last-4 Digit Rule:** To protect customer privacy under the DPDP Act 2023 and UIDAI regulations:\n   - Full 12-digit Aadhaar numbers must **never** be requested, displayed, or stored in plaintext on non-UIDAI servers.\n   - Only the **last 4 digits** of Aadhaar are collected to verify identity matching against previously completed offline or video KYC records.\n   - The last 4 digits are validated using the **Verhoeff Checksum Algorithm** to detect typographical errors instantly.",
+    "content_hi": "1. **Permanent Account Number (PAN):** Under Section 139A of the Income Tax Act and RBI KYC directions, PAN verification is mandatory for credit evaluation and credit bureau inquiries (CIBIL/Experian/Equifax/CRIF).\n2. **Aadhaar Masking and Last-4 Digit Rule:** To protect customer privacy under the DPDP Act 2023 and UIDAI regulations:\n   - Full 12-digit Aadhaar numbers must **never** be requested, displayed, or stored in plaintext on non-UIDAI servers.\n   - Only the **last 4 digits** of Aadhaar are collected to verify identity matching against previously completed offline or video KYC records.\n   - The last 4 digits are validated using the **Verhoeff Checksum Algorithm** to detect typographical errors instantly.",
+    "content_hi_en": "1. **Permanent Account Number (PAN):** Under Section 139A of the Income Tax Act and RBI KYC directions, PAN verification is mandatory for credit evaluation and credit bureau inquiries (CIBIL/Experian/Equifax/CRIF).\n2. **Aadhaar Masking and Last-4 Digit Rule:** To protect customer privacy under the DPDP Act 2023 and UIDAI regulations:\n   - Full 12-digit Aadhaar numbers must **never** be requested, displayed, or stored in plaintext on non-UIDAI servers.\n   - Only the **last 4 digits** of Aadhaar are collected to verify identity matching against previously completed offline or video KYC records.\n   - The last 4 digits are validated using the **Verhoeff Checksum Algorithm** to detect typographical errors instantly.",
+    "keywords": []
+  },
+  {
+    "chunk_id": "dpdp_aadhaar_privacy.md_3",
+    "doc_name": "Digital Personal Data Protection (DPDP) Act & Customer KYC Privacy Norms",
+    "section_title": "Section 3: Customer Rights Under DPDP Act 2023",
+    "citation": "[Source: DPDP Act 2023 — Customer Rights, Sec 3.4]",
+    "content_en": "1. **Right to Information and Summary:** Borrowers have the legal right to request a summary of personal data being processed and the identities of all entities with whom data has been shared.\n2. **Right to Correction and Erasure:** Customers can request correction of inaccurate financial data and request deletion/erasure of data once the statutory loan relationship and retention obligations are concluded.\n3. **Right to Grievance Redressal:** If consent is violated, customers have access to the bank's Data Protection Officer (DPO) and subsequent appeal to the Data Protection Board of India (DPBI).",
+    "content_hi": "1. **Right to Information and Summary:** Borrowers have the legal right to request a summary of personal data being processed and the identities of all entities with whom data has been shared.\n2. **Right to Correction and Erasure:** Customers can request correction of inaccurate financial data and request deletion/erasure of data once the statutory loan relationship and retention obligations are concluded.\n3. **Right to Grievance Redressal:** If consent is violated, customers have access to the bank's Data Protection Officer (DPO) and subsequent appeal to the Data Protection Board of India (DPBI).",
+    "content_hi_en": "1. **Right to Information and Summary:** Borrowers have the legal right to request a summary of personal data being processed and the identities of all entities with whom data has been shared.\n2. **Right to Correction and Erasure:** Customers can request correction of inaccurate financial data and request deletion/erasure of data once the statutory loan relationship and retention obligations are concluded.\n3. **Right to Grievance Redressal:** If consent is violated, customers have access to the bank's Data Protection Officer (DPO) and subsequent appeal to the Data Protection Board of India (DPBI).",
+    "keywords": []
+  },
+  {
+    "chunk_id": "lending_affordability_and_debt_counselling.md_1",
+    "doc_name": "BharatBanker AI — Responsible Lending & Affordability Guidelines",
+    "section_title": "Section 1: Debt-to-Income (DTI) Safety Thresholds",
+    "citation": "[Source: RBI Credit Assessment & Affordability Framework, Sec 1.3]",
+    "content_en": "1. **The 50% DTI Safety Cap:** In accordance with responsible lending standards, total monthly debt obligations (existing EMIs plus proposed new EMI) shall not exceed **50% of the applicant's verified net monthly income**.\n2. **Hard Veto on Over-Indebtedness:** When an applicant's projected DTI exceeds 50%, further credit expansion is blocked to safeguard the borrower from falling into a debt trap.\n3. **Affordable Alternative Guidance:** Rather than a punitive decline, the system provides transparent feedback advising the borrower on the maximum affordable loan amount within safe DTI limits.",
+    "content_hi": "1. **The 50% DTI Safety Cap:** In accordance with responsible lending standards, total monthly debt obligations (existing EMIs plus proposed new EMI) shall not exceed **50% of the applicant's verified net monthly income**.\n2. **Hard Veto on Over-Indebtedness:** When an applicant's projected DTI exceeds 50%, further credit expansion is blocked to safeguard the borrower from falling into a debt trap.\n3. **Affordable Alternative Guidance:** Rather than a punitive decline, the system provides transparent feedback advising the borrower on the maximum affordable loan amount within safe DTI limits.",
+    "content_hi_en": "1. **The 50% DTI Safety Cap:** In accordance with responsible lending standards, total monthly debt obligations (existing EMIs plus proposed new EMI) shall not exceed **50% of the applicant's verified net monthly income**.\n2. **Hard Veto on Over-Indebtedness:** When an applicant's projected DTI exceeds 50%, further credit expansion is blocked to safeguard the borrower from falling into a debt trap.\n3. **Affordable Alternative Guidance:** Rather than a punitive decline, the system provides transparent feedback advising the borrower on the maximum affordable loan amount within safe DTI limits.",
+    "keywords": []
+  },
+  {
+    "chunk_id": "lending_affordability_and_debt_counselling.md_2",
+    "doc_name": "BharatBanker AI — Responsible Lending & Affordability Guidelines",
+    "section_title": "Section 2: Empathetic Restructuring and Moratorium Support",
+    "citation": "[Source: BharatBanker Fair Recovery & Financial Health Code, Sec 2.1]",
+    "content_en": "1. **Zero-Penalty Rescheduling:** Borrowers encountering sudden financial stress (such as medical emergencies or seasonal income dips) can apply for a 30-day EMI pause or tenure restructuring without negative credit score reporting or penal charges.\n2. **Financial Counselling:** Bank financial health counsellors provide free assistance to restructure high-interest obligations into sustainable repayment schedules.",
+    "content_hi": "1. **Zero-Penalty Rescheduling:** Borrowers encountering sudden financial stress (such as medical emergencies or seasonal income dips) can apply for a 30-day EMI pause or tenure restructuring without negative credit score reporting or penal charges.\n2. **Financial Counselling:** Bank financial health counsellors provide free assistance to restructure high-interest obligations into sustainable repayment schedules.",
+    "content_hi_en": "1. **Zero-Penalty Rescheduling:** Borrowers encountering sudden financial stress (such as medical emergencies or seasonal income dips) can apply for a 30-day EMI pause or tenure restructuring without negative credit score reporting or penal charges.\n2. **Financial Counselling:** Bank financial health counsellors provide free assistance to restructure high-interest obligations into sustainable repayment schedules.",
+    "keywords": []
+  },
+  {
+    "chunk_id": "npci_upi_safety_guidelines.md_1",
+    "doc_name": "National Payments Corporation of India (NPCI) — UPI Security and Dispute Guidelines",
+    "section_title": "Section 1: The UPI Golden Rule — PIN is for Sending, Never for Receiving",
+    "citation": "[Source: NPCI UPI Safety Advisory, Sec 1.1]",
+    "content_en": "1. **UPI PIN Rule:** You need to enter your UPI PIN **ONLY when you are sending money / paying someone** or checking your account balance.\n2. **Receiving Money Does Not Require a PIN:** To receive money or receive a refund, you **NEVER** need to enter your UPI PIN or scan a QR code. Any message or person asking you to enter your PIN to receive funds is fraudulent.\n3. **Collect Requests:** When receiving a collect request, check the sender's VPA, name, and the amount carefully. Approving a collect request and entering your PIN will instantly deduct money from your account.",
+    "content_hi": "1. **UPI PIN Rule:** You need to enter your UPI PIN **ONLY when you are sending money / paying someone** or checking your account balance.\n2. **Receiving Money Does Not Require a PIN:** To receive money or receive a refund, you **NEVER** need to enter your UPI PIN or scan a QR code. Any message or person asking you to enter your PIN to receive funds is fraudulent.\n3. **Collect Requests:** When receiving a collect request, check the sender's VPA, name, and the amount carefully. Approving a collect request and entering your PIN will instantly deduct money from your account.",
+    "content_hi_en": "1. **UPI PIN Rule:** You need to enter your UPI PIN **ONLY when you are sending money / paying someone** or checking your account balance.\n2. **Receiving Money Does Not Require a PIN:** To receive money or receive a refund, you **NEVER** need to enter your UPI PIN or scan a QR code. Any message or person asking you to enter your PIN to receive funds is fraudulent.\n3. **Collect Requests:** When receiving a collect request, check the sender's VPA, name, and the amount carefully. Approving a collect request and entering your PIN will instantly deduct money from your account.",
+    "keywords": []
+  },
+  {
+    "chunk_id": "npci_upi_safety_guidelines.md_2",
+    "doc_name": "National Payments Corporation of India (NPCI) — UPI Security and Dispute Guidelines",
+    "section_title": "Section 2: Turnaround Time (TAT) and Auto-Reversal for Failed Transactions",
+    "citation": "[Source: NPCI Circular on Harmonisation of TAT, Sec 2.3]",
+    "content_en": "1. **Auto-Reversal Timelines (T+1 Rule):** If an amount is debited from the customer's account during a UPI transaction but not credited to the beneficiary account due to technical failure or timeout:\n   - The remitter bank must auto-reverse the funds within **T + 1 business day**.\n2. **Compensation for Delay:** If the amount is not reversed within T + 1 day, the customer is entitled to compensation of **₹100 per day of delay** beyond T + 1 day, automatically credited to the customer's account without requiring a separate claim.",
+    "content_hi": "1. **Auto-Reversal Timelines (T+1 Rule):** If an amount is debited from the customer's account during a UPI transaction but not credited to the beneficiary account due to technical failure or timeout:\n   - The remitter bank must auto-reverse the funds within **T + 1 business day**.\n2. **Compensation for Delay:** If the amount is not reversed within T + 1 day, the customer is entitled to compensation of **₹100 per day of delay** beyond T + 1 day, automatically credited to the customer's account without requiring a separate claim.",
+    "content_hi_en": "1. **Auto-Reversal Timelines (T+1 Rule):** If an amount is debited from the customer's account during a UPI transaction but not credited to the beneficiary account due to technical failure or timeout:\n   - The remitter bank must auto-reverse the funds within **T + 1 business day**.\n2. **Compensation for Delay:** If the amount is not reversed within T + 1 day, the customer is entitled to compensation of **₹100 per day of delay** beyond T + 1 day, automatically credited to the customer's account without requiring a separate claim.",
+    "keywords": []
+  },
+  {
+    "chunk_id": "npci_upi_safety_guidelines.md_3",
+    "doc_name": "National Payments Corporation of India (NPCI) — UPI Security and Dispute Guidelines",
+    "section_title": "Section 3: Dispute Resolution and Online Dispute Resolution (ODR)",
+    "citation": "[Source: NPCI UPI Procedural Guidelines, Sec 3.5]",
+    "content_en": "1. **Filing Disputes in App:** Customers can raise a dispute directly within any UPI app (BHIM, PhonePe, Google Pay, Bank apps) under transaction history -> \"Raise Dispute\" or \"Report Issue\".\n2. **Escalation Hierarchy:** If the app or PSP bank does not resolve the dispute within 30 days, the customer can escalate directly through NPCI's online dispute resolution portal or to the RBI Integrated Banking Ombudsman.",
+    "content_hi": "1. **Filing Disputes in App:** Customers can raise a dispute directly within any UPI app (BHIM, PhonePe, Google Pay, Bank apps) under transaction history -> \"Raise Dispute\" or \"Report Issue\".\n2. **Escalation Hierarchy:** If the app or PSP bank does not resolve the dispute within 30 days, the customer can escalate directly through NPCI's online dispute resolution portal or to the RBI Integrated Banking Ombudsman.",
+    "content_hi_en": "1. **Filing Disputes in App:** Customers can raise a dispute directly within any UPI app (BHIM, PhonePe, Google Pay, Bank apps) under transaction history -> \"Raise Dispute\" or \"Report Issue\".\n2. **Escalation Hierarchy:** If the app or PSP bank does not resolve the dispute within 30 days, the customer can escalate directly through NPCI's online dispute resolution portal or to the RBI Integrated Banking Ombudsman.",
+    "keywords": []
+  },
+  {
+    "chunk_id": "npci_upi_safety_guidelines.md_4",
+    "doc_name": "National Payments Corporation of India (NPCI) — UPI Security and Dispute Guidelines",
+    "section_title": "Section 4: Safe Digital Payment Practices",
+    "citation": "[Source: NPCI Cyber Security Guidelines, Sec 4.2]",
+    "content_en": "1. **Never Share OTP or MPIN:** Never share OTP, UPI PIN, ATM PIN, or card CVV with anyone, including bank staff or customer care representatives. Banks never ask for your PIN.\n2. **Beware of Screen Sharing Apps:** Never install remote access applications (such as AnyDesk, TeamViewer, QuickSupport) at the instruction of unknown callers claiming to fix banking issues.\n3. **Verify Payee Name:** UPI apps display the registered bank account name of the receiver before confirming payment. Always verify the recipient's verified name.",
+    "content_hi": "1. **Never Share OTP or MPIN:** Never share OTP, UPI PIN, ATM PIN, or card CVV with anyone, including bank staff or customer care representatives. Banks never ask for your PIN.\n2. **Beware of Screen Sharing Apps:** Never install remote access applications (such as AnyDesk, TeamViewer, QuickSupport) at the instruction of unknown callers claiming to fix banking issues.\n3. **Verify Payee Name:** UPI apps display the registered bank account name of the receiver before confirming payment. Always verify the recipient's verified name.",
+    "content_hi_en": "1. **Never Share OTP or MPIN:** Never share OTP, UPI PIN, ATM PIN, or card CVV with anyone, including bank staff or customer care representatives. Banks never ask for your PIN.\n2. **Beware of Screen Sharing Apps:** Never install remote access applications (such as AnyDesk, TeamViewer, QuickSupport) at the instruction of unknown callers claiming to fix banking issues.\n3. **Verify Payee Name:** UPI apps display the registered bank account name of the receiver before confirming payment. Always verify the recipient's verified name.",
+    "keywords": []
+  },
+  {
+    "chunk_id": "pmjdy_scheme_benefits.md_1",
+    "doc_name": "Pradhan Mantri Jan Dhan Yojana (PMJDY) — Scheme Guidelines and Benefits",
+    "section_title": "Section 1: Core Objectives and Zero-Balance Accounts",
+    "citation": "[Source: PMJDY Guidelines, Sec 1.1]",
+    "content_en": "Pradhan Mantri Jan Dhan Yojana (PMJDY) is the National Mission for Financial Inclusion to ensure access to financial services, namely, basic savings & deposit accounts, remittance, credit, insurance, and pension in an affordable manner.\n1. **Zero Minimum Balance:** Basic Savings Bank Deposit Accounts (BSBDA) opened under PMJDY do not require any minimum balance requirement. There are no penalty charges for maintaining a zero balance.\n2. **Interest on Deposits:** Normal savings bank interest rates apply on deposits maintained in PMJDY accounts.",
+    "content_hi": "Pradhan Mantri Jan Dhan Yojana (PMJDY) is the National Mission for Financial Inclusion to ensure access to financial services, namely, basic savings & deposit accounts, remittance, credit, insurance, and pension in an affordable manner.\n1. **Zero Minimum Balance:** Basic Savings Bank Deposit Accounts (BSBDA) opened under PMJDY do not require any minimum balance requirement. There are no penalty charges for maintaining a zero balance.\n2. **Interest on Deposits:** Normal savings bank interest rates apply on deposits maintained in PMJDY accounts.",
+    "content_hi_en": "Pradhan Mantri Jan Dhan Yojana (PMJDY) is the National Mission for Financial Inclusion to ensure access to financial services, namely, basic savings & deposit accounts, remittance, credit, insurance, and pension in an affordable manner.\n1. **Zero Minimum Balance:** Basic Savings Bank Deposit Accounts (BSBDA) opened under PMJDY do not require any minimum balance requirement. There are no penalty charges for maintaining a zero balance.\n2. **Interest on Deposits:** Normal savings bank interest rates apply on deposits maintained in PMJDY accounts.",
+    "keywords": []
+  },
+  {
+    "chunk_id": "pmjdy_scheme_benefits.md_2",
+    "doc_name": "Pradhan Mantri Jan Dhan Yojana (PMJDY) — Scheme Guidelines and Benefits",
+    "section_title": "Section 2: Overdraft (OD) Facility",
+    "citation": "[Source: PMJDY Scheme Rules, Sec 2.4]",
+    "content_en": "1. **Overdraft Limit:** An overdraft (OD) facility up to **₹10,000** is available to eligible PMJDY account holders.\n2. **Eligibility Criteria:**\n   - Satisfactory operation of the account for at least 6 months.\n   - One account per household (preferably the woman of the house).\n   - Age criteria: 18 years to 65 years.\n   - For OD amounts up to ₹2,000, no conditions/guarantees are attached.\n3. **Interest Rates on Overdraft:** Overdraft interest is charged at reasonable base rates (MCLR + nominal margin) strictly on the utilized amount for the utilized days.",
+    "content_hi": "1. **Overdraft Limit:** An overdraft (OD) facility up to **₹10,000** is available to eligible PMJDY account holders.\n2. **Eligibility Criteria:**\n   - Satisfactory operation of the account for at least 6 months.\n   - One account per household (preferably the woman of the house).\n   - Age criteria: 18 years to 65 years.\n   - For OD amounts up to ₹2,000, no conditions/guarantees are attached.\n3. **Interest Rates on Overdraft:** Overdraft interest is charged at reasonable base rates (MCLR + nominal margin) strictly on the utilized amount for the utilized days.",
+    "content_hi_en": "1. **Overdraft Limit:** An overdraft (OD) facility up to **₹10,000** is available to eligible PMJDY account holders.\n2. **Eligibility Criteria:**\n   - Satisfactory operation of the account for at least 6 months.\n   - One account per household (preferably the woman of the house).\n   - Age criteria: 18 years to 65 years.\n   - For OD amounts up to ₹2,000, no conditions/guarantees are attached.\n3. **Interest Rates on Overdraft:** Overdraft interest is charged at reasonable base rates (MCLR + nominal margin) strictly on the utilized amount for the utilized days.",
+    "keywords": []
+  },
+  {
+    "chunk_id": "pmjdy_scheme_benefits.md_3",
+    "doc_name": "Pradhan Mantri Jan Dhan Yojana (PMJDY) — Scheme Guidelines and Benefits",
+    "section_title": "Section 3: RuPay Debit Card and Built-in Insurance Cover",
+    "citation": "[Source: PMJDY Insurance Terms, Sec 3.2]",
+    "content_en": "1. **Accident Insurance Cover:** RuPay Debit Card issued to PMJDY account holders comes with built-in accidental insurance cover:\n   - For accounts opened after 28.08.2018, accidental death and total disability cover is **₹2,00,000** (₹2 Lakh).\n2. **Card Usage Condition:** To keep the accidental insurance cover active, the RuPay card must have been used for at least one successful financial or non-financial transaction at an ATM, PoS terminal, micro-ATM, or e-commerce merchant within 90 days prior to the date of accident.\n3. **No Premium Charged to Customer:** The insurance premium is fully sponsored under the national scheme and not deducted from the account balance.",
+    "content_hi": "1. **Accident Insurance Cover:** RuPay Debit Card issued to PMJDY account holders comes with built-in accidental insurance cover:\n   - For accounts opened after 28.08.2018, accidental death and total disability cover is **₹2,00,000** (₹2 Lakh).\n2. **Card Usage Condition:** To keep the accidental insurance cover active, the RuPay card must have been used for at least one successful financial or non-financial transaction at an ATM, PoS terminal, micro-ATM, or e-commerce merchant within 90 days prior to the date of accident.\n3. **No Premium Charged to Customer:** The insurance premium is fully sponsored under the national scheme and not deducted from the account balance.",
+    "content_hi_en": "1. **Accident Insurance Cover:** RuPay Debit Card issued to PMJDY account holders comes with built-in accidental insurance cover:\n   - For accounts opened after 28.08.2018, accidental death and total disability cover is **₹2,00,000** (₹2 Lakh).\n2. **Card Usage Condition:** To keep the accidental insurance cover active, the RuPay card must have been used for at least one successful financial or non-financial transaction at an ATM, PoS terminal, micro-ATM, or e-commerce merchant within 90 days prior to the date of accident.\n3. **No Premium Charged to Customer:** The insurance premium is fully sponsored under the national scheme and not deducted from the account balance.",
+    "keywords": []
+  },
+  {
+    "chunk_id": "pmjdy_scheme_benefits.md_4",
+    "doc_name": "Pradhan Mantri Jan Dhan Yojana (PMJDY) — Scheme Guidelines and Benefits",
+    "section_title": "Section 4: Direct Benefit Transfer (DBT)",
+    "citation": "[Source: PMJDY Implementation Manual, Sec 4.1]",
+    "content_en": "PMJDY accounts serve as the primary vehicle for government Direct Benefit Transfers (DBT) including PM-KISAN, LPG subsidy (PAHAL), MNREGA wages, and scholarship schemes. Accounts linked with Aadhaar facilitate seamless, leak-proof digital transfers directly into beneficiaries' accounts.",
+    "content_hi": "PMJDY accounts serve as the primary vehicle for government Direct Benefit Transfers (DBT) including PM-KISAN, LPG subsidy (PAHAL), MNREGA wages, and scholarship schemes. Accounts linked with Aadhaar facilitate seamless, leak-proof digital transfers directly into beneficiaries' accounts.",
+    "content_hi_en": "PMJDY accounts serve as the primary vehicle for government Direct Benefit Transfers (DBT) including PM-KISAN, LPG subsidy (PAHAL), MNREGA wages, and scholarship schemes. Accounts linked with Aadhaar facilitate seamless, leak-proof digital transfers directly into beneficiaries' accounts.",
+    "keywords": []
+  },
+  {
+    "chunk_id": "rbi_digital_lending_guidelines.md_1",
+    "doc_name": "Reserve Bank of India (RBI) — Regulatory Framework for Digital Lending",
+    "section_title": "Section 1: Scope and Applicability",
+    "citation": "[Source: RBI Digital Lending Guidelines 2022, Sec 1.1]",
+    "content_en": "These guidelines apply to all commercial banks, primary (urban) co-operative banks, state co-operative banks, district central co-operative banks, and non-banking financial companies (NBFCs) engaged in digital lending. Digital lending refers to a remote and automated lending process largely by use of seamless digital technologies for customer acquisition, credit assessment, loan approval, disbursement, recovery, and associated customer service.",
+    "content_hi": "These guidelines apply to all commercial banks, primary (urban) co-operative banks, state co-operative banks, district central co-operative banks, and non-banking financial companies (NBFCs) engaged in digital lending. Digital lending refers to a remote and automated lending process largely by use of seamless digital technologies for customer acquisition, credit assessment, loan approval, disbursement, recovery, and associated customer service.",
+    "content_hi_en": "These guidelines apply to all commercial banks, primary (urban) co-operative banks, state co-operative banks, district central co-operative banks, and non-banking financial companies (NBFCs) engaged in digital lending. Digital lending refers to a remote and automated lending process largely by use of seamless digital technologies for customer acquisition, credit assessment, loan approval, disbursement, recovery, and associated customer service.",
+    "keywords": []
+  },
+  {
+    "chunk_id": "rbi_digital_lending_guidelines.md_2",
+    "doc_name": "Reserve Bank of India (RBI) — Regulatory Framework for Digital Lending",
+    "section_title": "Section 2: Key Fact Statement (KFS) and APR Disclosure",
+    "citation": "[Source: RBI Digital Lending Guidelines 2022, Sec 2.3]",
+    "content_en": "1. **Mandatory KFS:** Regulated Entities (REs) must provide a Key Fact Statement (KFS) to the borrower before the execution of the loan contract in a standardized format.\n2. **Annual Percentage Rate (APR):** APR must represent the all-inclusive cost of digital loans to the borrower, incorporating the cost of funds, credit assessment charges, processing fees, and all other recurring or non-recurring charges.\n3. **No Hidden Costs:** Any fee or charge not explicitly disclosed in the KFS cannot be levied on the borrower at any stage of the loan tenure.\n4. **Vernacular KFS:** The KFS must be delivered to the borrower in a language understood by them (English, Hindi, or primary regional language).",
+    "content_hi": "1. **Mandatory KFS:** Regulated Entities (REs) must provide a Key Fact Statement (KFS) to the borrower before the execution of the loan contract in a standardized format.\n2. **Annual Percentage Rate (APR):** APR must represent the all-inclusive cost of digital loans to the borrower, incorporating the cost of funds, credit assessment charges, processing fees, and all other recurring or non-recurring charges.\n3. **No Hidden Costs:** Any fee or charge not explicitly disclosed in the KFS cannot be levied on the borrower at any stage of the loan tenure.\n4. **Vernacular KFS:** The KFS must be delivered to the borrower in a language understood by them (English, Hindi, or primary regional language).",
+    "content_hi_en": "1. **Mandatory KFS:** Regulated Entities (REs) must provide a Key Fact Statement (KFS) to the borrower before the execution of the loan contract in a standardized format.\n2. **Annual Percentage Rate (APR):** APR must represent the all-inclusive cost of digital loans to the borrower, incorporating the cost of funds, credit assessment charges, processing fees, and all other recurring or non-recurring charges.\n3. **No Hidden Costs:** Any fee or charge not explicitly disclosed in the KFS cannot be levied on the borrower at any stage of the loan tenure.\n4. **Vernacular KFS:** The KFS must be delivered to the borrower in a language understood by them (English, Hindi, or primary regional language).",
+    "keywords": []
+  },
+  {
+    "chunk_id": "rbi_digital_lending_guidelines.md_3",
+    "doc_name": "Reserve Bank of India (RBI) — Regulatory Framework for Digital Lending",
+    "section_title": "Section 3: Cooling-Off / Look-Up Period",
+    "citation": "[Source: RBI Digital Lending Guidelines 2022, Sec 3.1]",
+    "content_en": "1. **Definition of Cooling-Off Period:** A cooling-off / look-up period is the time window given to borrowers to exit a digital loan without paying any penal interest or foreclosure penalty.\n2. **Duration:** \n   - For loans having tenure of 7 days or more: Minimum cooling-off period is **3 calendar days**.\n   - For loans having tenure of less than 7 days: Minimum cooling-off period is **1 calendar day**.\n3. **Exit Terms:** If the borrower decides to exit within the cooling-off period, they are only required to repay the principal amount disbursed along with proportionate APR accrued during that period. No prepayment, foreclosure, or cancellation penalty can be charged.",
+    "content_hi": "1. **Definition of Cooling-Off Period:** A cooling-off / look-up period is the time window given to borrowers to exit a digital loan without paying any penal interest or foreclosure penalty.\n2. **Duration:** \n   - For loans having tenure of 7 days or more: Minimum cooling-off period is **3 calendar days**.\n   - For loans having tenure of less than 7 days: Minimum cooling-off period is **1 calendar day**.\n3. **Exit Terms:** If the borrower decides to exit within the cooling-off period, they are only required to repay the principal amount disbursed along with proportionate APR accrued during that period. No prepayment, foreclosure, or cancellation penalty can be charged.",
+    "content_hi_en": "1. **Definition of Cooling-Off Period:** A cooling-off / look-up period is the time window given to borrowers to exit a digital loan without paying any penal interest or foreclosure penalty.\n2. **Duration:** \n   - For loans having tenure of 7 days or more: Minimum cooling-off period is **3 calendar days**.\n   - For loans having tenure of less than 7 days: Minimum cooling-off period is **1 calendar day**.\n3. **Exit Terms:** If the borrower decides to exit within the cooling-off period, they are only required to repay the principal amount disbursed along with proportionate APR accrued during that period. No prepayment, foreclosure, or cancellation penalty can be charged.",
+    "keywords": []
+  },
+  {
+    "chunk_id": "rbi_digital_lending_guidelines.md_4",
+    "doc_name": "Reserve Bank of India (RBI) — Regulatory Framework for Digital Lending",
+    "section_title": "Section 4: Direct Loan Disbursal and Repayments",
+    "citation": "[Source: RBI Digital Lending Guidelines 2022, Sec 4.2]",
+    "content_en": "1. **Direct Bank-to-Bank Transfer:** All loan disbursements must be executed directly into the verified bank account of the borrower. Under no circumstances may disbursals pass through pass-through or pool accounts of third-party Lending Service Providers (LSPs).\n2. **Repayments:** All repayments must be directly executed from the borrower's bank account to the regulated entity's balance sheet account without intermediate pooling by app aggregators.",
+    "content_hi": "1. **Direct Bank-to-Bank Transfer:** All loan disbursements must be executed directly into the verified bank account of the borrower. Under no circumstances may disbursals pass through pass-through or pool accounts of third-party Lending Service Providers (LSPs).\n2. **Repayments:** All repayments must be directly executed from the borrower's bank account to the regulated entity's balance sheet account without intermediate pooling by app aggregators.",
+    "content_hi_en": "1. **Direct Bank-to-Bank Transfer:** All loan disbursements must be executed directly into the verified bank account of the borrower. Under no circumstances may disbursals pass through pass-through or pool accounts of third-party Lending Service Providers (LSPs).\n2. **Repayments:** All repayments must be directly executed from the borrower's bank account to the regulated entity's balance sheet account without intermediate pooling by app aggregators.",
+    "keywords": []
+  },
+  {
+    "chunk_id": "rbi_digital_lending_guidelines.md_5",
+    "doc_name": "Reserve Bank of India (RBI) — Regulatory Framework for Digital Lending",
+    "section_title": "Section 5: Recovery Agents and Ethical Conduct",
+    "citation": "[Source: RBI Digital Lending Guidelines 2022, Sec 5.4]",
+    "content_en": "1. **Authorized Channels Only:** REs and their LSPs shall strictly communicate with borrowers through officially designated telephone numbers and customer service portals.\n2. **Timing of Contact:** Borrowers shall not be contacted before 08:00 AM or after 07:00 PM for loan recovery.\n3. **Prohibition of Harassment:** Regulated entities are strictly prohibited from using intimidation, public shaming, accessing borrower phone contact lists, accessing media/photos, or unauthorized physical visits.",
+    "content_hi": "1. **Authorized Channels Only:** REs and their LSPs shall strictly communicate with borrowers through officially designated telephone numbers and customer service portals.\n2. **Timing of Contact:** Borrowers shall not be contacted before 08:00 AM or after 07:00 PM for loan recovery.\n3. **Prohibition of Harassment:** Regulated entities are strictly prohibited from using intimidation, public shaming, accessing borrower phone contact lists, accessing media/photos, or unauthorized physical visits.",
+    "content_hi_en": "1. **Authorized Channels Only:** REs and their LSPs shall strictly communicate with borrowers through officially designated telephone numbers and customer service portals.\n2. **Timing of Contact:** Borrowers shall not be contacted before 08:00 AM or after 07:00 PM for loan recovery.\n3. **Prohibition of Harassment:** Regulated entities are strictly prohibited from using intimidation, public shaming, accessing borrower phone contact lists, accessing media/photos, or unauthorized physical visits.",
+    "keywords": []
+  },
+  {
+    "chunk_id": "rbi_digital_lending_guidelines.md_6",
+    "doc_name": "Reserve Bank of India (RBI) — Regulatory Framework for Digital Lending",
+    "section_title": "Section 6: Data Privacy and Storage Restrictions",
+    "citation": "[Source: RBI Digital Lending Guidelines 2022, Sec 6.1]",
+    "content_en": "1. **Data Minimization:** Lending apps shall collect only such data as is strictly necessary for credit assessment and KYC (e.g., PAN, last 4 digits of Aadhaar with consent).\n2. **No Access to Mobile Hardware:** Apps are strictly forbidden from accessing mobile device storage, contact lists, call logs, or camera/microphone without explicit one-time session consent for video KYC.\n3. **Data Localization:** All digital lending data must reside on servers physically located within India.",
+    "content_hi": "1. **Data Minimization:** Lending apps shall collect only such data as is strictly necessary for credit assessment and KYC (e.g., PAN, last 4 digits of Aadhaar with consent).\n2. **No Access to Mobile Hardware:** Apps are strictly forbidden from accessing mobile device storage, contact lists, call logs, or camera/microphone without explicit one-time session consent for video KYC.\n3. **Data Localization:** All digital lending data must reside on servers physically located within India.",
+    "content_hi_en": "1. **Data Minimization:** Lending apps shall collect only such data as is strictly necessary for credit assessment and KYC (e.g., PAN, last 4 digits of Aadhaar with consent).\n2. **No Access to Mobile Hardware:** Apps are strictly forbidden from accessing mobile device storage, contact lists, call logs, or camera/microphone without explicit one-time session consent for video KYC.\n3. **Data Localization:** All digital lending data must reside on servers physically located within India.",
+    "keywords": []
+  },
+  {
+    "chunk_id": "rbi_fair_practices_code.md_1",
+    "doc_name": "Reserve Bank of India (RBI) — Fair Practices Code for Lenders",
+    "section_title": "Section 1: Loan Application and Sanction Terms",
+    "citation": "[Source: RBI Fair Practices Code, Sec 1.2]",
+    "content_en": "1. **Loan Application Acknowledgement:** Regulated lenders must issue an explicit acknowledgement for all loan applications along with a verifiable reference number and indicated timeline for decision.\n2. **Clear Terms and Conditions:** The loan sanction letter must transparently state:\n   - Sanctioned amount\n   - Annualized interest rate (APR)\n   - Method of application of interest\n   - Repayment schedule, EMI amount, and tenure\n   - All charges including penal charges and processing fees.",
+    "content_hi": "1. **Loan Application Acknowledgement:** Regulated lenders must issue an explicit acknowledgement for all loan applications along with a verifiable reference number and indicated timeline for decision.\n2. **Clear Terms and Conditions:** The loan sanction letter must transparently state:\n   - Sanctioned amount\n   - Annualized interest rate (APR)\n   - Method of application of interest\n   - Repayment schedule, EMI amount, and tenure\n   - All charges including penal charges and processing fees.",
+    "content_hi_en": "1. **Loan Application Acknowledgement:** Regulated lenders must issue an explicit acknowledgement for all loan applications along with a verifiable reference number and indicated timeline for decision.\n2. **Clear Terms and Conditions:** The loan sanction letter must transparently state:\n   - Sanctioned amount\n   - Annualized interest rate (APR)\n   - Method of application of interest\n   - Repayment schedule, EMI amount, and tenure\n   - All charges including penal charges and processing fees.",
+    "keywords": []
+  },
+  {
+    "chunk_id": "rbi_fair_practices_code.md_2",
+    "doc_name": "Reserve Bank of India (RBI) — Fair Practices Code for Lenders",
+    "section_title": "Section 2: Foreclosure Charges and Prepayment Penalty Restrictions",
+    "citation": "[Source: RBI Master Direction on Fair Practices, Sec 2.5]",
+    "content_en": "1. **Floating Rate Personal / Home Loans:** Banks and NBFCs shall **NOT charge foreclosure charges or pre-payment penalties** on any floating-rate term loans sanctioned to individual borrowers for purposes other than business.\n2. **Right to Prepay:** Borrowers have the unconditional right to prepay part or all of their loan balance at any time without penalty for individual floating-rate loans.",
+    "content_hi": "1. **Floating Rate Personal / Home Loans:** Banks and NBFCs shall **NOT charge foreclosure charges or pre-payment penalties** on any floating-rate term loans sanctioned to individual borrowers for purposes other than business.\n2. **Right to Prepay:** Borrowers have the unconditional right to prepay part or all of their loan balance at any time without penalty for individual floating-rate loans.",
+    "content_hi_en": "1. **Floating Rate Personal / Home Loans:** Banks and NBFCs shall **NOT charge foreclosure charges or pre-payment penalties** on any floating-rate term loans sanctioned to individual borrowers for purposes other than business.\n2. **Right to Prepay:** Borrowers have the unconditional right to prepay part or all of their loan balance at any time without penalty for individual floating-rate loans.",
+    "keywords": []
+  },
+  {
+    "chunk_id": "rbi_fair_practices_code.md_3",
+    "doc_name": "Reserve Bank of India (RBI) — Fair Practices Code for Lenders",
+    "section_title": "Section 3: Penal Charges vs. Penal Interest (Fair Lending Conduct)",
+    "citation": "[Source: RBI Guidelines on Fair Lending Conduct — Penal Charges, Sec 3.1]",
+    "content_en": "1. **No Capitalization of Penal Charges:** Penal charges for delayed payments or non-compliance must be levied purely as 'penal charges' and shall not be compounded or added to the principal balance for charging further interest.\n2. **Reasonable Quantum:** Penal charges must be reasonable, proportionate to the default, and clearly disclosed upfront in the Key Fact Statement without punitive escalation.",
+    "content_hi": "1. **No Capitalization of Penal Charges:** Penal charges for delayed payments or non-compliance must be levied purely as 'penal charges' and shall not be compounded or added to the principal balance for charging further interest.\n2. **Reasonable Quantum:** Penal charges must be reasonable, proportionate to the default, and clearly disclosed upfront in the Key Fact Statement without punitive escalation.",
+    "content_hi_en": "1. **No Capitalization of Penal Charges:** Penal charges for delayed payments or non-compliance must be levied purely as 'penal charges' and shall not be compounded or added to the principal balance for charging further interest.\n2. **Reasonable Quantum:** Penal charges must be reasonable, proportionate to the default, and clearly disclosed upfront in the Key Fact Statement without punitive escalation.",
+    "keywords": []
+  },
+  {
+    "chunk_id": "rbi_fair_practices_code.md_4",
+    "doc_name": "Reserve Bank of India (RBI) — Fair Practices Code for Lenders",
+    "section_title": "Section 4: What Happens When a Borrower Cannot Repay (Financial Distress Protocol)",
+    "citation": "[Source: RBI Framework for Stressed Assets and Grievance Redressal, Sec 4.4]",
+    "content_en": "1. **Early Stress Identification:** Lenders are instructed to identify early indicators of financial distress and offer proactive restructuring or rescheduling options before categorizing the account as NPA.\n2. **Empathetic Restructuring:** Borrowers facing genuine income disruption, health emergencies, or business distress can request EMI rescheduling, tenure extension, or a temporary moratorium without punitive harassment.\n3. **Ombudsman Access:** In case of unfair recovery practices or arbitrary loan recall, borrowers have the statutory right to appeal directly to the RBI Banking Ombudsman under the Integrated Ombudsman Scheme.",
+    "content_hi": "1. **Early Stress Identification:** Lenders are instructed to identify early indicators of financial distress and offer proactive restructuring or rescheduling options before categorizing the account as NPA.\n2. **Empathetic Restructuring:** Borrowers facing genuine income disruption, health emergencies, or business distress can request EMI rescheduling, tenure extension, or a temporary moratorium without punitive harassment.\n3. **Ombudsman Access:** In case of unfair recovery practices or arbitrary loan recall, borrowers have the statutory right to appeal directly to the RBI Banking Ombudsman under the Integrated Ombudsman Scheme.",
+    "content_hi_en": "1. **Early Stress Identification:** Lenders are instructed to identify early indicators of financial distress and offer proactive restructuring or rescheduling options before categorizing the account as NPA.\n2. **Empathetic Restructuring:** Borrowers facing genuine income disruption, health emergencies, or business distress can request EMI rescheduling, tenure extension, or a temporary moratorium without punitive harassment.\n3. **Ombudsman Access:** In case of unfair recovery practices or arbitrary loan recall, borrowers have the statutory right to appeal directly to the RBI Banking Ombudsman under the Integrated Ombudsman Scheme.",
+    "keywords": []
+  }
+]
