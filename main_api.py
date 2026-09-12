@@ -17,6 +17,7 @@ from pydantic import BaseModel, Field
 from slowapi import _rate_limit_exceeded_handler
 from slowapi.errors import RateLimitExceeded
 
+from feature_pipeline import CustomerFeaturePipeline
 from recommendation_engine import RecommendationEngine
 from veto_decision_layer import VetoDecisionEngine, VetoDecisionOutcome
 from chat_service import ChatService
@@ -53,6 +54,7 @@ app.add_middleware(
 
 
 # Global Engine Instances
+pipeline = CustomerFeaturePipeline()
 rec_engine = RecommendationEngine()
 veto_engine = VetoDecisionEngine()
 chat_service = ChatService()
@@ -154,7 +156,10 @@ def get_customer_dashboard(
 
     # 2. Compute Contract 1 Feature & Recommendation Vector (Person 1)
     try:
-        cust_vector = rec_engine.get_customer_feature_vector(customer_id)
+        feat = pipeline.get_feature_vector(customer_id)
+        if not feat:
+            raise ValueError("Feature vector is empty.")
+        cust_vector = rec_engine.get_contract_1_vector(feat)
     except Exception as e:
         raise HTTPException(status_code=404, detail=f"Customer '{customer_id}' not found or feature generation failed: {e}")
 
