@@ -10,12 +10,15 @@
 ## 1. Executive Overview & Guiding Philosophy
 
 BharatBanker AI is not a set of three siloed features—it is a **single, unified decisioning platform** that tackles the hackathon’s three core sub-problems together:
+
 1. **Sub-Problem 1:** Proactive Hyper-Personalized Banking Recommendation Engine.
 2. **Sub-Problem 2:** Vernacular-First Conversational AI (Dual Engine: Slot-Filling + RAG).
 3. **Sub-Problem 3:** Empathetic Fraud & Financial Stress Detection.
 
 ### The Winning Differentiator: Decision Discipline & Ethical Veto
+
 Judges frequently penalize solutions that appear as generic upselling tools. Our core technical edge is the **Unified Cross-Cutting Veto Layer**:
+
 - If a customer exhibits financial stress or a debt-to-income (DTI) ratio exceeding $50\%$, **credit product recommendations are blocked by a deterministic hard rule** across all touchpoints (both app dashboards and conversational loan journeys).
 - The system replaces predatory upsells with **empathetic interventions** (EMI rescheduling, debt counselling, budgeting nudges).
 - Every recommendation is explainable (**SHAP-based plain-language explanations**), and every vernacular conversational answer is grounded in cited regulatory sources (**RBI / PMJDY / NPCI**).
@@ -60,7 +63,7 @@ flowchart TD
 ```
 
 | Member | Role Title | Sub-Problems Owned | Primary Tech Stack | Core Hackathon Mission |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | **Person 1** | **ML & Personalization Lead** | Sub-Problem 1 & Shared Feature Store | Python, Pandas, Scikit-learn, LightGBM, SHAP | Build the synthetic 100-customer feature pipeline, K-Means clustering, LightGBM propensity scoring, and SHAP explainability. |
 | **Person 2** | **Risk ML & Veto Systems Lead** | Sub-Problem 3 & Cross-Cutting Veto Layer | Python, PyOD / Isolation Forest, NumPy, SciPy | Train PaySim anomaly detection, financial stress trend-slope classifier, and the central **Hard Veto / Decision Layer**. |
 | **Person 3** | **Conversational AI & RAG Lead** | Sub-Problem 2 (Vernacular Assistant) | Python, HuggingFace (`multilingual-e5`/`LaBSE`), FAISS, Regex, Verhoeff | Build dual-engine chatbot: deterministic slot-filling for loan journeys + multilingual RAG over RBI/PMJDY documents. |
@@ -73,9 +76,11 @@ flowchart TD
 ---
 
 ### 👤 Person 1: ML Engineer & Data Pipeline Lead
+
 * **Primary Scope:** Sub-Problem 1 (Smart Recommendation Engine) + Shared Feature Engineering Pipeline
 
 #### Detailed Technical Responsibilities
+
 1. **Synthetic Data Generation & Multi-Source Synthesis**:
    - Synthesize a realistic 100-customer transaction dataset spanning 6 continuous months.
    - Include realistic Indian banking patterns: salary credits (regular vs. irregular), UPI merchant payments (groceries, food, travel, luxury), recurring EMI debits, utility bills, and savings balance trends.
@@ -106,6 +111,7 @@ flowchart TD
    - Transform top SHAP values into clean, plain-language bullet points (e.g., *"Recommended because your monthly surplus grew by ₹14,000 and your debt-to-income is below 25%"*).
 
 #### Concrete Deliverables
+
 - `data_generator.py`: Generates the 100 synthetic profiles and 6-month transaction logs (`customer_360_data.csv`).
 - `feature_pipeline.py`: Pure Python module transforming raw transaction logs into a standardized feature vector.
 - `segmentation_engine.py`: K-Means training, clustering, and life-stage trigger rules.
@@ -115,9 +121,11 @@ flowchart TD
 ---
 
 ### 👤 Person 2: Risk ML & Decision Systems Lead
+
 * **Primary Scope:** Sub-Problem 3 (Fraud & Financial Stress Detection) + Cross-Cutting Decision Layer
 
 #### Detailed Technical Responsibilities
+
 1. **Unsupervised Transactional Fraud Detection**:
    - Ingest the **PaySim (Kaggle)** synthetic mobile-money dataset.
    - Train an unsupervised anomaly detection model using **Isolation Forest** or **PyOD** (`from pyod.models.iforest import IForest`).
@@ -140,6 +148,7 @@ flowchart TD
      - **0–19 (Critical):** Immediate fraud check, human outreach, regulatory reporting if required.
 4. **The Cross-Cutting Veto / Decision Layer (Core Winning Asset)**:
    - Build the deterministic gatekeeper module sitting between candidate actions and customer presentation:
+
      ```python
      def evaluate_veto_layer(customer_id, raw_propensity_recs, stress_score, dti):
          if stress_score > HARD_THRESHOLD or dti > 0.50:
@@ -161,9 +170,11 @@ flowchart TD
                  "approved_action": get_single_best_action(discounted_recs)
              }
      ```
+
    - Wire this decision logic so that both Person 1's product recommendations and Person 3's loan applications must clear it.
 
 #### Concrete Deliverables
+
 - `fraud_detector.py`: PaySim-trained Isolation Forest model returning anomaly scores and hold flags.
 - `stress_detector.py`: Trend-slope feature extraction and 0–100 Financial Health Score computation.
 - `veto_decision_layer.py`: Central arbitration engine enforcing the hard floor and empathetic substitution.
@@ -172,9 +183,11 @@ flowchart TD
 ---
 
 ### 👤 Person 3: Conversational AI & Multilingual RAG Lead
+
 * **Primary Scope:** Sub-Problem 2 (Vernacular Conversational AI — Slot-Filling + RAG)
 
 #### Detailed Technical Responsibilities
+
 1. **Deterministic Slot-Filling Engine (Loan Application / KYC)**:
    - Build a robust dialogue state tracker for a structured **Loan Application Journey**:
      - Slot Schema: `Full Name` $\rightarrow$ `PAN Number` $\rightarrow$ `Aadhaar (Last 4 Digits)` $\rightarrow$ `Monthly Income` $\rightarrow$ `Loan Amount` $\rightarrow$ `Employment Type`.
@@ -206,6 +219,7 @@ flowchart TD
    - Once the loan amount and income slots are collected, pass them directly to Person 2's `veto_decision_layer`. If the customer's calculated DTI exceeds $50\%$, politely communicate the cap and suggest an affordable alternative.
 
 #### Concrete Deliverables
+
 - `slot_filling_engine.py`: Dialogue state tracker with regex and Verhoeff checksum algorithms.
 - `rag_engine.py`: Document ingestion script, FAISS index generator, and grounded citation retriever.
 - `intent_router.py`: Per-turn router that bifurcates between task slot-filling and knowledge RAG.
@@ -215,9 +229,11 @@ flowchart TD
 ---
 
 ### 👤 Person 4: Platform, Security & Demo Lead
+
 * **Primary Scope:** Core API Gateway, Application Security & Compliance (DPDP/RBI), Front-End Dashboards & Pitch Flow
 
 #### Detailed Technical Responsibilities
+
 1. **Central FastAPI Gateway**:
    - Build the unified web service connecting all modules into clean, production-ready REST endpoints:
      - `GET /api/customer/{id}/dashboard`: Fetches customer profile, Financial Health Score, and single best recommendation.
@@ -251,6 +267,7 @@ flowchart TD
    - Coordinate the pitch presentation, ensuring strict alignment with hackathon judging rubrics.
 
 #### Concrete Deliverables
+
 - `main_api.py`: FastAPI server coordinating all micro-modules.
 - `security_middleware.py`: Rate limiting, IDOR prevention, JWT auth, and DPDP consent validation.
 - `app.py`: Interactive Streamlit dashboard containing both the Customer View and the Banker Veto Inspector.
@@ -263,7 +280,9 @@ flowchart TD
 To ensure all 4 team members can develop concurrently without blocking each other, the team must freeze these JSON schemas during the first hour.
 
 ### Contract 1: Customer Feature & Recommendation Vector
+
 **Producer:** Person 1 $\longrightarrow$ **Consumers:** Person 2, Person 4
+
 ```json
 {
   "customer_id": "CUST_IND_1042",
@@ -291,7 +310,9 @@ To ensure all 4 team members can develop concurrently without blocking each othe
 ---
 
 ### Contract 2: Veto & Decision Layer Outcome
+
 **Producer:** Person 2 $\longrightarrow$ **Consumers:** Person 1, Person 3, Person 4
+
 ```json
 {
   "customer_id": "CUST_IND_1042",
@@ -313,7 +334,9 @@ To ensure all 4 team members can develop concurrently without blocking each othe
 ---
 
 ### Contract 3: Conversational Chatbot Payload
+
 **Producer:** Person 3 $\longrightarrow$ **Consumer:** Person 4
+
 ```json
 {
   "session_id": "sess_user_992",
@@ -335,7 +358,7 @@ To ensure all 4 team members can develop concurrently without blocking each othe
 ## 5. 36-Hour Hackathon Execution Roadmap
 
 | Timeline | Phase | Deliverables & Parallel Workstreams |
-|---|---|---|
+| --- | --- | --- |
 | **Hours 0 – 4** | **Schema Freeze & Environment Setup** | - Agree on API contracts.<br>- **P1:** Generates 100-customer synthetic transaction logs.<br>- **P2:** Sets up PaySim fraud dataset & creates baseline stress score formula.<br>- **P3:** Collects 5–8 RBI/PMJDY PDFs & tests Verhoeff algorithm.<br>- **P4:** Initializes FastAPI repository & Streamlit wireframe layout. |
 | **Hours 4 – 16** | **Core Algorithm Implementation** | - **P1:** Trains K-Means clustering, LightGBM models, and SHAP pipeline.<br>- **P2:** Trains Isolation Forest and builds trend-slope regression engine.<br>- **P3:** Implements slot-filling state tracker and builds local FAISS RAG index.<br>- **P4:** Implements IDOR and rate-limiting security middleware; builds UI shell. |
 | **Hours 16 – 26** | **Pipeline Integration & Veto Coupling** | - Connect Person 1's recommendations to Person 2's Veto Layer.<br>- Connect Person 3's conversational loan requests to the Veto Layer.<br>- Person 4 exposes all backend services via FastAPI and renders real responses in Streamlit. |
@@ -349,21 +372,24 @@ To ensure all 4 team members can develop concurrently without blocking each othe
 When presenting to judges, demonstrate these 3 specific scenarios to satisfy every evaluation criterion:
 
 ### 🌟 Scenario 1: The Upward Earner (Proactive Hyper-Personalization)
+
 - **Customer:** Priya Sharma (Young Software Engineer).
 - **Trigger:** Salary credit jump from ₹45,000 to ₹75,000 detected over the last 2 months.
 - **System Action:** Instead of showing a spammy pop-up for 5 different loans, the system surfaces **one single, high-affinity recommendation: Tax-Saving ELSS SIP**.
 - **The Wow Factor:** The UI displays the plain-language SHAP explanation: *"Surfaced because your monthly surplus grew by 40% and you have no existing mutual fund investments."*
 
 ### 🛡️ Scenario 2: The Stressed Earner (The Ethical Veto Showstopper)
+
 - **Customer:** Amit Patel (Small Merchant).
 - **Situation:** High transaction volume, but medical expenses surged by $60\%$, and balance has decayed over 3 consecutive months.
-- **The Demonstration:** 
+- **The Demonstration:**
   1. The judge toggles the slider to view the raw ML recommendation: the propensity model wants to sell an instant ₹2 Lakh Personal Loan.
   2. The screen highlights the **Cross-Cutting Veto Layer firing**: the Hard Floor intercepts the recommendation.
   3. The Personal Loan offer is **completely blocked**, and replaced with an **Empathetic Intervention: 30-Day EMI Grace Period & Budgeting Assistance**.
 - **Judge Takeaway:** Proves the system is designed for **genuine customer benefit** rather than predatory upselling.
 
 ### 🗣️ Scenario 3: The Vernacular User (Conversational Slot-Filling + Grounded RAG)
+
 - **Customer:** Sunita Devi (Artisan in Tier-2 city, communicating in Hindi).
 - **The Demonstration:**
   1. Sunita initiates a loan application in conversational Hindi.
@@ -378,7 +404,7 @@ When presenting to judges, demonstrate these 3 specific scenarios to satisfy eve
 ## 7. Hackathon Fallback & De-Risking Matrix
 
 | Risk / Failure Mode | Fallback Plan (Pre-agreed) |
-|---|---|
+| --- | --- |
 | **GPU / Embedding Latency:** `multilingual-e5` is too slow on local laptop during RAG retrieval. | Fall back to `all-MiniLM-L6-v2` with a small pre-translated bilingual dictionary for common banking terms. |
 | **Data Mismatch:** Synthetic data causes propensity models to predict uniformly. | Use pre-calibrated synthetic data templates with injected extreme anchor profiles for demo users. |
 | **Chatbot Stuck in Loop:** Complex LLM prompt fails on corner-case input. | Use rule-based regex fallback with default options/buttons for slot advancement. |
