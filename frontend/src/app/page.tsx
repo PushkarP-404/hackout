@@ -132,21 +132,21 @@ interface ChatMsg {
 
 export default function App() {
   const [activeTab, setActiveTab] = useState<Tab>('overview');
-  const [selectedCustomerId, setSelectedCustomerId] = useState<string>('CUST_ELEANOR');
-  const [data, setData] = useState<DashboardResponse>(CANONICAL_PRESETS.CUST_ELEANOR);
+  const [selectedCustomerId, setSelectedCustomerId] = useState<string>('CUST_PRIYA');
+  const [data, setData] = useState<DashboardResponse>(CANONICAL_PRESETS.CUST_PRIYA);
   const [loading, setLoading] = useState(false);
   const [lang, setLang] = useState<'EN' | 'HI'>('EN');
   const [darkMode, setDarkMode] = useState(false); // Default Figma theme: Light Mode (Warm Ivory + Deep Teal)
 
   // Simulation Sliders
-  const [simDti, setSimDti] = useState<number>(0.199);
-  const [simHealth, setSimHealth] = useState<number>(72);
+  const [simDti, setSimDti] = useState<number>(0.1067);
+  const [simHealth, setSimHealth] = useState<number>(100);
 
   // Chat state
   const [chatMessages, setChatMessages] = useState<ChatMsg[]>([
     {
       role: 'ai',
-      text: "Hi Eleanor! I'm your BharatBank AI assistant. Ask me about your balances, DTI, spending, health score, SIP planning, or security alerts."
+      text: "Hi Priya! I'm your BharatBank AI assistant. Ask me about your balances, DTI, spending, health score, SIP planning, or security alerts."
     }
   ]);
   const [chatInput, setChatInput] = useState('');
@@ -200,7 +200,7 @@ export default function App() {
         setSimHealth(res.contract_2_veto_outcome.financial_health_score);
       } catch (err) {
         console.warn('Fallback to canonical preset for', selectedCustomerId, err);
-        const preset = CANONICAL_PRESETS[selectedCustomerId] || CANONICAL_PRESETS.CUST_ELEANOR;
+        const preset = CANONICAL_PRESETS[selectedCustomerId] || CANONICAL_PRESETS.CUST_PRIYA;
         setData(preset);
         setSimDti(preset.customer_profile.dti_ratio);
         setSimHealth(preset.contract_2_veto_outcome.financial_health_score);
@@ -259,7 +259,7 @@ export default function App() {
       setSimDti(fresh.customer_profile.dti_ratio);
       setSimHealth(fresh.contract_2_veto_outcome.financial_health_score);
     } catch {
-      const preset = CANONICAL_PRESETS[selectedCustomerId] || CANONICAL_PRESETS.CUST_ELEANOR;
+      const preset = CANONICAL_PRESETS[selectedCustomerId] || CANONICAL_PRESETS.CUST_PRIYA;
       setData(preset);
       setSimDti(preset.customer_profile.dti_ratio);
       setSimHealth(preset.contract_2_veto_outcome.financial_health_score);
@@ -309,23 +309,23 @@ export default function App() {
   const action = veto.final_action;
   const isVetoActive = veto.veto_triggered;
 
-  // Real or derived financial metrics
+  // Real or derived financial metrics (all in INR ₹)
   const fm = data.financial_metrics;
   const monthlySalary = fm ? fm.monthly_salary : profile.monthly_salary;
   const monthlyEmi = fm ? fm.monthly_emi : (monthlySalary * profile.dti_ratio);
-  const monthlyBills = fm ? fm.monthly_bills : (selectedCustomerId === 'CUST_ELEANOR' ? 12600 : Math.round(monthlySalary * 0.088));
-  const monthlySpend = fm ? fm.monthly_spend : (selectedCustomerId === 'CUST_ELEANOR' ? 89340 : Math.round(monthlySalary * 0.62));
+  const monthlyBills = fm ? fm.monthly_bills : Math.round(monthlySalary * 0.088);
+  const monthlySpend = fm ? fm.monthly_spend : Math.round(monthlySalary * 0.62);
   const surplus = fm ? fm.monthly_surplus : Math.max(0, monthlySalary - monthlyEmi - monthlyBills);
-  const totalDebt = fm ? fm.total_debt : (selectedCustomerId === 'CUST_ELEANOR' ? 3850000 : Math.round(monthlyEmi * 135));
+  const totalDebt = fm ? fm.total_debt : Math.round(monthlyEmi * 135);
   const annualIncome = fm ? fm.annual_income : (monthlySalary * 12);
   const debtPct = fm ? fm.debt_pct : ((totalDebt / (annualIncome + 1e-5)) * 100);
-  const prevInflows = fm?.prev_inflows || (selectedCustomerId === 'CUST_ELEANOR' ? [128000, 135200, 119800, 142500] : [Math.round(monthlySalary * 0.85), Math.round(monthlySalary * 0.90), Math.round(monthlySalary * 0.92), monthlySalary]);
+  const prevInflows = fm?.prev_inflows || [Math.round(monthlySalary * 0.85), Math.round(monthlySalary * 0.90), Math.round(monthlySalary * 0.92), monthlySalary];
   const monthLabels = ['Jun', 'Jul', 'Aug', 'Sep'];
 
-  // Accounts
+  // Accounts (all in INR ₹)
   const accounts = data.accounts && data.accounts.length > 0 ? data.accounts : [
-    { id: 'SAV-009163', name: 'High-Yield Savings', balance: 54220.00, type: 'savings' },
-    { id: 'INV-002577', name: 'Investment Portfolio', balance: 138640.75, type: 'investment' },
+    { id: 'SAV-001042', name: 'High-Yield Savings', balance: 84270.00, type: 'savings' },
+    { id: 'INV-001042', name: 'Investment Portfolio', balance: 138640.75, type: 'investment' },
   ];
 
   // Transactions
@@ -1540,12 +1540,11 @@ export default function App() {
                       Select a persona to immediately view how the feature engineering pipeline and veto thresholds adapt in real-time.
                     </p>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
                       {[
-                        { id: 'CUST_ELEANOR', name: 'Eleanor Strauss', role: 'Figma Baseline (Healthy 72)' },
-                        { id: 'CUST_PRIYA', name: 'Priya Sharma', role: 'Young Earner (Salary Jump)' },
-                        { id: 'CUST_AMIT', name: 'Amit Patel', role: 'Stressed (Hard Veto Active)' },
-                        { id: 'CUST_SUNITA', name: 'Sunita Devi', role: 'Artisan (Hindi Conversational)' },
+                        { id: 'CUST_PRIYA', name: 'Priya Sharma', role: 'Young Earner (Salary Jump, Healthy 100)' },
+                        { id: 'CUST_AMIT', name: 'Amit Patel', role: 'Stressed (Hard Veto Active, Medical Surge)' },
+                        { id: 'CUST_SUNITA', name: 'Sunita Devi', role: 'Artisan (Hindi Conversational, PMJDY)' },
                         { id: 'CUST_RAMESH', name: 'Ramesh Kumar', role: 'Stable Professional (Loan Approved)' },
                       ].map((c) => (
                         <button
