@@ -1,0 +1,8 @@
+[server]
+# Disabling the local sources watcher avoids HuggingFace Transformers / torchvision
+# inspection spam in the terminal and significantly speeds up app startup.
+fileWatcherType = "none"
+headless = true
+
+[browser]
+gatherUsageStats = false
